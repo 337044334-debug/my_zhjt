@@ -10,6 +10,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include "register.h"
+#include "pe15thread.h"
 
 namespace Ui {
 class Login;
@@ -28,6 +29,7 @@ private:
     Ui::Login *ui;
     Register* registerDialog;
     My_lineEdit *currentLineEdit;//虚拟键盘
+    Pe15thread pe15thread;
     QSqlDatabase db;
     void init();//初始化->初始化数据库、建表、添加默认用户
     bool match();//登录界面用户与默认用户对比
@@ -44,6 +46,7 @@ private slots:
     void keyboard_input_send(QString gemfield);   //接收键盘发过来的数据
     void on_pushButton_login_clicked();
     void on_pushButton_exit_clicked();
+    void loginSlot();
 };
 
 #endif // LOGIN_H

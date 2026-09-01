@@ -27,8 +27,6 @@ My_Humiture::~My_Humiture()
 
 void My_Humiture::set_humAdtemAdill(QString tem, QString hum, QString ill)
 {
-    //将线程采集的数据赋值给成员变量
-    emit send(tem,hum,ill);
     ui->humidity->setText(hum);
     ui->temperature->setText(tem);
     ui->illumination->setText(ill);

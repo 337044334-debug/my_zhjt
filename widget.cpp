@@ -5,7 +5,6 @@
 #include "weather.h"
 #include "my_humiture.h"
 #include "control.h"
-
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QTimer>
@@ -45,12 +44,10 @@ Widget::Widget(QWidget *parent)
     Control *control = new Control(ui->tab_humiture);
     tab_control->addWidget(control);
 
-    login = new Login(this);
-    login->show();
-
-    connect(settings,&Settings::intelligent_control_off,control,&Control::init);
-    connect(settings,&Settings::send,control,&Control::updata_settings);//更新阈值设置
-    connect(my_humiture,&My_Humiture::send,control,&Control::updata_humiture);//更新传感器参数
+    // pe15thread=new Pe15thread();
+    // login=new Login(this);
+    // connect(pe15thread,&Pe15thread::pesig,this,&Widget::login_show);
+    // pe15thread->start();
 
 }
 
@@ -58,6 +55,12 @@ Widget::~Widget()
 {
     delete ui;
 }
+
+// void Widget::login_show()
+// {
+//     this->close();
+//     login->show();
+// }
 
 
 

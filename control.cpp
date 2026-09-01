@@ -2,7 +2,6 @@
 #include "ui_control.h"
 #include <linux/input.h>
 #include <fcntl.h>
-#include <settings.h>
 #include <unistd.h>
 #include <QDebug>
 
@@ -11,60 +10,8 @@ Control::Control(QWidget *parent)
     , ui(new Ui::Control)
 {
     ui->setupUi(this);
-    connect(this,&Control::updata,this,&Control::compare);
+    init();    
 }
-
-
-void Control::updata_settings(QString tem, QString lv1, QString lv2, QString lv3)
-{
-    tem_max=tem;
-    ill_lv1=lv1;
-    ill_lv2=lv2;
-    ill_lv3=lv3;
-    emit updata();
-}
-
-void Control::updata_humiture(QString tem_new, QString hum_new, QString ill_new)
-{
-    hum=hum_new;
-    tem=tem_new;
-    ill=ill_new;
-    emit updata();
-}
-
-void Control::compare()
-{
-    qDebug()<<"tem_max:"<<tem_max<<"\n";
-    qDebug()<<"ill_lv1:"<<ill_lv1<<"\n";
-    qDebug()<<"ill_lv2:"<<ill_lv2<<"\n";
-    qDebug()<<"ill_lv3:"<<ill_lv3<<"\n";
-    qDebug()<<"tem:"<<tem<<"\n";
-    qDebug()<<"hum:"<<hum<<"\n";
-    qDebug()<<"ill:"<<ill<<"\n";
-    if(ill<ill_lv1&&ill>ill_lv2)
-    {
-        emit on_pushButton_led1_on_clicked();
-        emit on_pushButton_led2_off_clicked();
-        emit on_pushButton_led3_off_clicked();
-    }
-    else if(ill<ill_lv2&&ill>ill_lv3)
-    {
-        emit on_pushButton_led1_on_clicked();
-        emit on_pushButton_led2_on_clicked();
-        emit on_pushButton_led3_off_clicked();
-    }
-    else if(ill<ill_lv3)
-    {
-        emit on_pushButton_led1_on_clicked();
-        emit on_pushButton_led2_on_clicked();
-        emit on_pushButton_led3_on_clicked();
-    }
-    if(tem>tem_max)
-        emit on_pushButton_fan_3_clicked();
-    else
-        emit on_pushButton_fan_off_clicked();
-}
-
 Control::~Control()
 {
     delete ui;
@@ -119,7 +66,7 @@ void Control::on_pushButton_led3_off_clicked()
 }
 
 
-void Control::on_pushButton_fan_on_clicked()
+void Control::on_pushButton_fan_on_clicked()//风扇1档
 {
     ui->pushButton_fan_on->setStyleSheet("background-image:url(:/icon/lv1.png);border-style:outset;");
     ui->pushButton_fan_off->setStyleSheet("background-image:url(:/icon/disclose.png);border-style:outset;");
@@ -129,7 +76,7 @@ void Control::on_pushButton_fan_on_clicked()
 }
 
 
-void Control::on_pushButton_fan_2_clicked()
+void Control::on_pushButton_fan_2_clicked()//风扇2档
 {
     ui->pushButton_fan_on->setStyleSheet("background-image:url(:/icon/dislv1.png);border-style:outset;");
     ui->pushButton_fan_off->setStyleSheet("background-image:url(:/icon/disclose.png);border-style:outset;");
@@ -139,7 +86,7 @@ void Control::on_pushButton_fan_2_clicked()
 }
 
 
-void Control::on_pushButton_fan_3_clicked()
+void Control::on_pushButton_fan_3_clicked()//风扇3档
 {
     ui->pushButton_fan_on->setStyleSheet("background-image:url(:/icon/dislv1.png);border-style:outset;");
     ui->pushButton_fan_off->setStyleSheet("background-image:url(:/icon/disclose.png);border-style:outset;");
@@ -149,7 +96,7 @@ void Control::on_pushButton_fan_3_clicked()
 }
 
 
-void Control::on_pushButton_fan_off_clicked()
+void Control::on_pushButton_fan_off_clicked()//风扇关
 {
     ui->pushButton_fan_on->setStyleSheet("background-image:url(:/icon/dislv1.png);border-style:outset;");
     ui->pushButton_fan_off->setStyleSheet("background-image:url(:/icon/close.png);border-style:outset;");

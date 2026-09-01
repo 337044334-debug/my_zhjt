@@ -2,7 +2,8 @@
 #define WIDGET_H
 
 #include <QWidget>
-#include "login.h"
+// #include "pe15thread.h"
+// #include "login.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -19,9 +20,11 @@ public:
 
 private:
     Ui::Widget *ui;
-    Login *login;
+    // Pe15thread *pe15thread;
+    // Login *login;
 
 private slots:
+    //void login_show();
 
 };
 #endif // WIDGET_H

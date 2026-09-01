@@ -19,9 +19,9 @@ public:
     SyszuxPinyin *syszuxpinyin_serialName;//虚拟键盘
     SyszuxPinyin *syszuxpinyin_send;//虚拟键盘
 
-signals:
-    void send(QString,QString,QString,QString);
-    void intelligent_control_off();
+//signals:
+
+
 
 private slots:
     void keyboardshow_send(QString data);//虚拟键盘显示
@@ -30,6 +30,7 @@ private slots:
     void on_pushButton_settings_fan_clicked();//风扇参数修改
     void on_pushButton_settings_ON_clicked();//开始智能控制
     void on_pushButton_settings_OFF_clicked();//关闭智能控制
+
 
 private:
     Ui::Settings *ui;

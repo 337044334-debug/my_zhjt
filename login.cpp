@@ -1,6 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
-#include "pe15thread.h"
+
 
 int Numberoferrors =3;
 
@@ -129,6 +129,8 @@ void Login::on_pushButton_login_clicked()
         Numberoferrors =3;
         this->close();
         registerDialog->show();
+//        beepunring();
+//        connect(&pe15thread,SIGNAL(pesig()),this,SLOT(loginSlot()));
     }
     else
     {
@@ -163,8 +165,13 @@ void Login::on_pushButton_login_clicked()
 
 void Login::on_pushButton_exit_clicked()
 {
-    //emit loginclose();
+    pe15thread.start();
     close();
+}
+
+void Login::loginSlot()
+{
+    this->show();
 }
 
 

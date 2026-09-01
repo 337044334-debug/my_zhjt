@@ -12,16 +12,12 @@ class Control : public QWidget
     Q_OBJECT
 
 public:
-    Control(QWidget *parent = nullptr);
-
-    void updata_settings(QString,QString,QString,QString);
-    void updata_humiture(QString,QString,QString);
-    void compare();
+    Control(QWidget *parent = nullptr);  
     void init();
     ~Control();
 
 signals:
-    void updata();
+    
 
 
 private slots:
@@ -42,12 +38,5 @@ private:
     Ui::Control *ui;
     void beepring();
     void beepunring();    
-    QString hum;//湿度
-    QString tem;//温度
-    QString ill;//光照
-    QString tem_max;//最大温度
-    QString ill_lv1;//lv1参数值
-    QString ill_lv2;//lv2参数值
-    QString ill_lv3;//lv3参数值
 };
 #endif // CONTROL_H

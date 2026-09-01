@@ -16,8 +16,6 @@ public:
     My_Humiture(QWidget *parent = nullptr);
     ~My_Humiture();
 
-signals:
-    void send(QString,QString,QString);
 
 private:
     Ui::My_Humiture *ui;

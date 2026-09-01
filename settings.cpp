@@ -12,6 +12,7 @@ Settings::Settings(QWidget *parent)
     ,ill_lv2("2")
     ,ill_lv3("1")
 
+
 {
     ui->setupUi(this);
     ui->lineEdit_led_lv1->setText("3");
@@ -23,7 +24,6 @@ Settings::Settings(QWidget *parent)
     connect(ui->lineEdit_led_lv2,&My_lineEdit::send_show,this,&Settings::keyboardshow_send);
     connect(ui->lineEdit_led_lv3,&My_lineEdit::send_show,this,&Settings::keyboardshow_send);
     connect(ui->lineEdit_fan_tem,&My_lineEdit::send_show,this,&Settings::keyboardshow_send);
-
     connect(syszuxpinyin_send,&SyszuxPinyin::sendPinyin,this,&Settings::keyboard_input_send);
 }
 
@@ -32,7 +32,37 @@ Settings::~Settings()
     delete ui;
 }
 
-
+// void Control::compare()
+// {
+//     if(intel)
+//     {
+//         if(ill<ill_lv1&&ill>ill_lv2)
+//         {
+//             emit led1_on();
+//             emit led2_off();
+//             emit led3_off();
+//         }
+//         else if(ill<ill_lv2&&ill>ill_lv3)
+//         {
+//             emit led1_on();
+//             emit led2_on();
+//             emit led3_off();
+//         }
+//         else if(ill<ill_lv3)
+//         {
+//             emit led1_on();
+//             emit led2_on();
+//             emit led3_on();
+//         }
+//         if(tem>tem_max)
+//             emit fen_on();
+//         else
+//             emit fen_off();
+//     }
+//     else
+//         init();
+    
+// }
 
 void Settings::keyboardshow_send(QString data)
 {
@@ -62,11 +92,6 @@ void Settings::on_pushButton_settings_led_clicked()
     }
     else
         QMessageBox::warning(this,tr("warning"), tr("阈值不能为空"));
-    emit send(tem_max,ill_lv1,ill_lv2,ill_lv3);//更新数据
-    qDebug()<<"tem_max:"<<tem_max<<"\n";
-    qDebug()<<"ill_lv1:"<<ill_lv1<<"\n";
-    qDebug()<<"ill_lv2:"<<ill_lv2<<"\n";
-    qDebug()<<"ill_lv3:"<<ill_lv3<<"\n";
 }
 
 
@@ -79,21 +104,11 @@ void Settings::on_pushButton_settings_fan_clicked()
     }
     else
         QMessageBox::warning(this,tr("information"), tr("风扇开启温度阈值不能为空"));
-    emit send(tem_max,ill_lv1,ill_lv2,ill_lv3);//更新数据
-    qDebug()<<"tem_max:"<<tem_max<<"\n";
-    qDebug()<<"ill_lv1:"<<ill_lv1<<"\n";
-    qDebug()<<"ill_lv2:"<<ill_lv2<<"\n";
-    qDebug()<<"ill_lv3:"<<ill_lv3<<"\n";
 }
 
 
 void Settings::on_pushButton_settings_ON_clicked()
 {
-    emit send(tem_max,ill_lv1,ill_lv2,ill_lv3);//更新数据
-    qDebug()<<"tem_max:"<<tem_max<<"\n";
-    qDebug()<<"ill_lv1:"<<ill_lv1<<"\n";
-    qDebug()<<"ill_lv2:"<<ill_lv2<<"\n";
-    qDebug()<<"ill_lv3:"<<ill_lv3<<"\n";
     QMessageBox::information(this, tr("in,ill_lv1formation"),"开启智能检测成功");
     ui->pushButton_settings_ON->setStyleSheet("background-image:url(:/icon/OpenMonitoring.png);border-style:outset;");
     ui->pushButton_settings_OFF->setStyleSheet("background-image:url(:/icon/disCloseMonitoring.png);border-style:outset;");
@@ -102,7 +117,6 @@ void Settings::on_pushButton_settings_ON_clicked()
 
 void Settings::on_pushButton_settings_OFF_clicked()
 {
-    emit intelligent_control_off();
     ui->pushButton_settings_ON->setStyleSheet("background-image:url(:/icon/disOpenMonitoring.png);border-style:outset;");
     ui->pushButton_settings_OFF->setStyleSheet("background-image:url(:/icon/CloseMonitoring.png);border-style:outset;");
     QMessageBox::information(this, tr("information"),"关闭智能检测成功");
