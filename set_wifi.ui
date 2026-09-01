@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>set_wifi</class>
+ <widget class="QDialog" name="set_wifi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>438</width>
+    <height>290</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="windowFilePath">
+   <string/>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>110</y>
+     <width>71</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>密码：</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>180</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* ====================
+   串口按钮 - 默认状态
+   ==================== */
+QPushButton#pushButton_SerialPortOpen {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border: 1px solid #9e9e9e;          /* 中灰色边框 */
+    border-radius: 8px;
+    padding: 5px 15px;                  /* 内边距，让按钮更舒适 */
+    min-width: 80px;                    /* 最小宽度，防止按钮太小 */
+    min-height: 30px;                   /* 最小高度 */
+}
+
+/* ====================
+   鼠标悬停状态
+   ==================== */
+QPushButton#pushButton_SerialPortOpen:hover {
+    background: rgb(220, 220, 220);
+    border-color: rgb(0, 0, 0);
+}
+
+/* ====================
+   鼠标按下状态
+   ==================== */
+QPushButton#pushButton_SerialPortOpen:pressed {
+    background: rgb(190, 190, 190);
+    border-color: rgb(0, 0, 0);
+}
+
+/* ====================
+   禁用状态（灰色不可用）
+   ==================== */
+QPushButton#pushButton_SerialPortOpen:disabled {
+    color: rgb(255, 255, 255);
+    background: rgb(167, 164, 170);
+    border-color: rgb(167, 164, 170);
+}</string>
+   </property>
+   <property name="text">
+    <string>连接</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>180</y>
+     <width>101</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* ====================
+   串口按钮 - 默认状态
+   ==================== */
+QPushButton#pushButton_SerialPortOpen {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+    border: 1px solid #9e9e9e;          /* 中灰色边框 */
+    border-radius: 8px;
+    padding: 5px 15px;                  /* 内边距，让按钮更舒适 */
+    min-width: 80px;                    /* 最小宽度，防止按钮太小 */
+    min-height: 30px;                   /* 最小高度 */
+}
+
+/* ====================
+   鼠标悬停状态
+   ==================== */
+QPushButton#pushButton_SerialPortOpen:hover {
+    background: rgb(220, 220, 220);
+    border-color: rgb(0, 0, 0);
+}
+
+/* ====================
+   鼠标按下状态
+   ==================== */
+QPushButton#pushButton_SerialPortOpen:pressed {
+    background: rgb(190, 190, 190);
+    border-color: rgb(0, 0, 0);
+}
+
+/* ====================
+   禁用状态（灰色不可用）
+   ==================== */
+QPushButton#pushButton_SerialPortOpen:disabled {
+    color: rgb(255, 255, 255);
+    background: rgb(167, 164, 170);
+    border-color: rgb(167, 164, 170);
+}</string>
+   </property>
+   <property name="text">
+    <string>取消</string>
+   </property>
+  </widget>
+  <widget class="My_lineEdit" name="password_edit">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>100</y>
+     <width>150</width>
+     <height>50</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>438</width>
+     <height>290</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="icon.qrc">:/icon/background2.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <zorder>label_2</zorder>
+  <zorder>label</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>pushButton_2</zorder>
+  <zorder>password_edit</zorder>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>My_lineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>my_lineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

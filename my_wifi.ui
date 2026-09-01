@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>My_WiFi</class>
+ <widget class="QWidget" name="My_WiFi">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>982</width>
+    <height>519</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>My_WiFi</string>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>60</y>
+     <width>571</width>
+     <height>441</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>无线列表</string>
+   </property>
+   <widget class="QScrollArea" name="scrollArea">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>561</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>559</width>
+       <height>409</height>
+      </rect>
+     </property>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>9</y>
+        <width>541</width>
+        <height>391</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QRadioButton" name="radioButton">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_2">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_3">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_5">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_6">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_7">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_8">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_9">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_10">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QRadioButton" name="radioButton_11">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>982</width>
+     <height>519</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="icon.qrc">:/icon/WIFIbackground.png</pixmap>
+   </property>
+   <property name="scaledContents">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>0</y>
+     <width>360</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:rgb(117, 80, 123);
+font: 75 italic 25pt &quot;URW Bookman L&quot;;</string>
+   </property>
+   <property name="text">
+    <string>WiFi连接程序</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="connectBTN">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>180</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#connectBTN
+{
+    color: rgb(0, 0, 0);
+	border-color:rgb(241, 236, 237);
+    background:rgb(255, 255, 255);
+    border:1px solid grey;
+    border-radius:8px;
+}
+QPushButton#connectBTN:hover
+{
+    border-color:rgb(0, 0, 0);
+    background:rgb(220, 220, 220);
+}
+QPushButton#connectBTN:pressed
+{
+    border-color:rgb(0, 0, 0);
+    background:rgb(190, 190, 190);
+}
+QPushButton#connectBTN:disabled
+{
+    border-color:rgb(167, 164, 170);
+    background:rgb(167, 164, 170);
+    color: rgb(255,255,255);
+}</string>
+   </property>
+   <property name="text">
+    <string>连接网络</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="connectBTN_2">
+   <property name="geometry">
+    <rect>
+     <x>750</x>
+     <y>110</y>
+     <width>161</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton#connectBTN_2
+{
+    color: rgb(0, 0, 0);
+	border-color:rgb(241, 236, 237);
+    background:rgb(255, 255, 255);
+    border:1px solid grey;
+    border-radius:8px;
+}
+QPushButton#connectBTN_2:hover
+{
+    border-color:rgb(0, 0, 0);
+    background:rgb(220, 220, 220);
+}
+QPushButton#connectBTN_2:pressed
+{
+    border-color:rgb(0, 0, 0);
+    background:rgb(190, 190, 190);
+}
+QPushButton#connectBTN_2:disabled
+{
+    border-color:rgb(167, 164, 170);
+    background:rgb(167, 164, 170);
+    color: rgb(255,255,255);
+}</string>
+   </property>
+   <property name="text">
+    <string>刷新列表</string>
+   </property>
+  </widget>
+  <zorder>label</zorder>
+  <zorder>connectBTN</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>label_2</zorder>
+  <zorder>connectBTN_2</zorder>
+ </widget>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

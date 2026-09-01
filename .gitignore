@@ -1,0 +1,30 @@
+# Qt Creator user files
+*.pro.user
+*.pro.user.*
+
+# Qt build directories
+build-*/
+debug/
+release/
+
+# C/C++ generated files
+*.o
+*.obj
+*.a
+*.so
+
+# Qt generated files
+moc_*
+qrc_*
+ui_*
+
+# Executables
+*.exe
+*.app
+
+# Temporary files
+*.tmp
+*.log
+
+# Linux temporary files
+*~
