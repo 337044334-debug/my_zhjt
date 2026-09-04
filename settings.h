@@ -19,7 +19,8 @@ public:
     SyszuxPinyin *syszuxpinyin_serialName;//虚拟键盘
     SyszuxPinyin *syszuxpinyin_send;//虚拟键盘
 
-//signals:
+signals:
+    void send(float,float,float,float,bool);
 
 
 
@@ -35,9 +36,10 @@ private slots:
 private:
     Ui::Settings *ui;
     My_lineEdit *currentLineEdit;//虚拟键盘
-    QString tem_max;//最大温度
-    QString ill_lv1;//lv1参数值
-    QString ill_lv2;//lv2参数值
-    QString ill_lv3;//lv3参数值
+    float tem_max;//最大温度
+    float ill_lv1;//lv1参数值
+    float ill_lv2;//lv2参数值
+    float ill_lv3;//lv3参数值
+    bool smart;//智能控制
 };
 #endif // SETTINGS_H

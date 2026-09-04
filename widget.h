@@ -2,6 +2,10 @@
 #define WIDGET_H
 
 #include <QWidget>
+#include "settings.h"
+#include "collentdatathread.h"
+#include "smartcontroller.h"
+#include "control.h"
 // #include "pe15thread.h"
 // #include "login.h"
 
@@ -20,6 +24,11 @@ public:
 
 private:
     Ui::Widget *ui;
+    Settings *settings;
+    CollentDataThread *data_thread;
+    SmartController *smart;
+    Control *control;
+
     // Pe15thread *pe15thread;
     // Login *login;
 

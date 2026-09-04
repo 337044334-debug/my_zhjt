@@ -15,18 +15,21 @@ class My_Humiture : public QWidget
 public:
     My_Humiture(QWidget *parent = nullptr);
     ~My_Humiture();
-
+    float get_tem();
+    float get_hum();
+    float get_ill();
+    CollentDataThread* getDataThread();
 
 private:
     Ui::My_Humiture *ui;
     QTimer *currentTime;
-    QString hum;//湿度
-    QString tem;//温度
-    QString ill;//光照
-    CollentDataThread thread_collentdata;//数据采集线程
+    float hum;//湿度
+    float tem;//温度
+    float ill;//光照
+    CollentDataThread *thread_collentdata;//数据采集线程
 
 private slots:
-    void set_humAdtemAdill(QString tem,QString hum,QString ill);
+    void set_humAdtemAdill(float,float,float);
     void timeUpdate();
 };
 #endif // MY_HUMITURE_H

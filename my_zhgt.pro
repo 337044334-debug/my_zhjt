@@ -14,6 +14,7 @@ SOURCES += \
     login.cpp \
     main.cpp \
     my_lineedit.cpp \
+    smartcontroller.cpp \
     syszuxpinyin.cpp \
     widget.cpp \
     my_wifi.cpp \
@@ -29,6 +30,7 @@ SOURCES += \
 HEADERS += \
     login.h \
     my_lineedit.h \
+    smartcontroller.h \
     syszuxpinyin.h \
     widget.h \
     my_wifi.h \

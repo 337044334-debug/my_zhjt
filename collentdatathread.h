@@ -11,7 +11,7 @@ public:
     virtual void run();
 
 signals:
-    void send(QString tem,QString hum,QString ill);
+    void send(float tem,float hum,float ill);
 
 private:
     int read_sysfs_float(const char *device, const char *filename, float *val);

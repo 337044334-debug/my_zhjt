@@ -49,7 +49,7 @@ void CollentDataThread::run()
             continue;
         }
         tem_float =(temp_raw + temp_offset) * temp_scale / 1000;//（6869-4368）*10.725097656/1000
-        tem =QString::number(tem_float,'f', 2);//26.81
+        //tem =QString::number(tem_float,'f', 2);//26.81
         ret_int=read_sysfs_int(device1, "in_humidityrelative_raw", &hum_raw);//9499
         if (ret_int < 0)
         {
@@ -72,7 +72,7 @@ void CollentDataThread::run()
             continue;
         }
         hum_float = (hum_raw + hum_offset) * hum_scale / 1000;//（9499-786）*7.629394531/1000
-        hum =QString::number(hum_float,'f', 2);//66.47
+        //hum =QString::number(hum_float,'f', 2);//66.47
         ret_float=read_sysfs_float(device2, "in_illuminance_input", &ill_float);//2.8
         if (ret_float < 0)
         {
@@ -80,8 +80,8 @@ void CollentDataThread::run()
             QThread::sleep(2);
             continue;
         }
-        ill =QString::number(ill_float,'f', 2);//2.8
-        emit send(tem,hum,ill);//发送温湿度和光照
+        //ill =QString::number(ill_float,'f', 2);//2.8
+        emit send(tem_float,hum_float,ill_float);//发送温湿度和光照
         QThread::sleep(2);
     }
 }
