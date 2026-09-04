@@ -8,7 +8,7 @@
 #include <errno.h>
 #include <QDebug>
 
-Pe15thread::Pe15thread(): paused(false)
+Pe15thread::Pe15thread(): paused(false),stopped(false)
 {
 
 }
@@ -28,6 +28,16 @@ void Pe15thread::resume()
     condition.wakeOne();
 }
 
+void Pe15thread::stop()
+{
+    QMutexLocker locker(&mutex);
+
+    stopped = true;
+
+    condition.wakeOne();
+
+}
+
 void Pe15thread::run()
 {
     system("touch pe15.txt");
@@ -36,11 +46,19 @@ void Pe15thread::run()
     char buf[32];
     int lastValue = 0;
     while (1) { 
+        qDebug()<<"进入循环";
         mutex.lock();  
-        while (paused)
+        while (paused && !stopped)
         {
+            qDebug()<<"等待中";
             condition.wait(&mutex);
         } 
+        if (stopped)
+        {
+            mutex.unlock();
+            break;
+        }
+        mutex.unlock();
         system("gpioget gpiochip4 15 > pe15.txt");
         fd = open("./pe15.txt",O_RDONLY);
         if(fd < 0)

@@ -34,6 +34,10 @@ private slots:
     void keyboard_input_send(QString gemfield);   //接收键盘发过来的数据
     void on_pushButton_register_clicked();
     void on_pushButton_exit_2_clicked();
+
+signals:
+    void register_close();
+
 };
 
 #endif // REGISTER_H

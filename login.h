@@ -23,6 +23,8 @@ class Login : public QDialog
 public:
     explicit Login(QWidget *parent = nullptr);
     SyszuxPinyin *syszuxpinyin_send;
+    void btn_hide();
+    void btn_show();
     ~Login();
 
 private:
@@ -46,7 +48,9 @@ private slots:
     void keyboard_input_send(QString gemfield);   //接收键盘发过来的数据
     void on_pushButton_login_clicked();
     void on_pushButton_exit_clicked();
-    void loginSlot();
+    
+    void on_Sign_clicked();
+    void on_main_clicked();
 };
 
 #endif // LOGIN_H

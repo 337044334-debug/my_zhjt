@@ -75,6 +75,6 @@ void Register::on_pushButton_register_clicked()
 
 void Register::on_pushButton_exit_2_clicked()
 {
-    close();
+    emit register_close();
 }
 

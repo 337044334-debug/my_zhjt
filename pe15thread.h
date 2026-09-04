@@ -12,6 +12,7 @@ public:
     Pe15thread();
     void pause();//暂停
     void resume();//继续
+    void stop();//停止
 
 
 signals:

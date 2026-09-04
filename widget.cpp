@@ -54,23 +54,43 @@ Widget::Widget(QWidget *parent)
     control = new Control(smart,ui->tab_humiture);
     tab_control->addWidget(control);
 
-    // pe15thread=new Pe15thread();
-    // login=new Login(this);
-    // connect(pe15thread,&Pe15thread::pesig,this,&Widget::login_show);
-    // pe15thread->start();
+    /*  login界面  */
+    pe15thread=new Pe15thread();
+    login=new Login(this);
+    connect(pe15thread,&Pe15thread::pesig,this,&Widget::login_show);
+    connect(login,&Login::loginclose,this,&Widget::login_close);
+    pe15thread->start();
 
 }
 
 Widget::~Widget()
 {
+     pe15thread->stop();
+
+    if(pe15thread->isRunning())
+    {
+        pe15thread->wait();
+    }
+
+    delete pe15thread;    
     delete ui;
 }
 
-// void Widget::login_show()
-// {
-//     this->close();
-//     login->show();
-// }
+void Widget::login_show()
+{
+    qDebug()<<"有信号";
+    this->hide();
+    login->btn_hide();
+    login->show();
+    pe15thread->pause();
+}
+
+void Widget::login_close()
+{
+    this->show();
+    login->hide();
+    pe15thread->resume();    
+}
 
 
 

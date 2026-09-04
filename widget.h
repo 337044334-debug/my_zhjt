@@ -6,8 +6,8 @@
 #include "collentdatathread.h"
 #include "smartcontroller.h"
 #include "control.h"
-// #include "pe15thread.h"
-// #include "login.h"
+#include "pe15thread.h"
+#include "login.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -29,11 +29,12 @@ private:
     SmartController *smart;
     Control *control;
 
-    // Pe15thread *pe15thread;
-    // Login *login;
+    Pe15thread *pe15thread;
+    Login *login;
 
 private slots:
-    //void login_show();
+    void login_show();
+    void login_close();
 
 };
 #endif // WIDGET_H

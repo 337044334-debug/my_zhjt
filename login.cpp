@@ -24,6 +24,7 @@ Login::Login(QWidget *parent) :
     connect(ui->username,&My_lineEdit::send_show,this,&Login::keyboardshow_send);
     connect(ui->password,&My_lineEdit::send_show,this,&Login::keyboardshow_send);
     connect(syszuxpinyin_send,&SyszuxPinyin::sendPinyin,this,&Login::keyboard_input_send);
+    connect(registerDialog,&Register::register_close,this,&Login::on_pushButton_exit_clicked);
 }
 
 Login::~Login()
@@ -34,6 +35,20 @@ Login::~Login()
     //关闭ui界面
     delete ui;
 }
+
+
+void Login::btn_hide()
+{
+    ui->Sign->hide();
+    ui->main->hide();
+}
+
+void Login::btn_show()
+{
+    ui->Sign->show();
+    ui->main->show();
+}
+
 
 void Login::init()
 {    
@@ -126,9 +141,8 @@ void Login::on_pushButton_login_clicked()
     {
         QMessageBox::information(this, tr("information"),"密码正确，门锁已打开");
    //重置错误次数
-        Numberoferrors =3;
-        this->close();
-        registerDialog->show();
+        Numberoferrors =3;        
+        btn_show();        
 //        beepunring();
 //        connect(&pe15thread,SIGNAL(pesig()),this,SLOT(loginSlot()));
     }
@@ -138,7 +152,6 @@ void Login::on_pushButton_login_clicked()
         Numberoferrors--;
         switch(Numberoferrors)
         {
-
             case 2:
                 info ="密码错误,还有3次机会";
                 break;
@@ -165,14 +178,16 @@ void Login::on_pushButton_login_clicked()
 
 void Login::on_pushButton_exit_clicked()
 {
-    pe15thread.start();
-    close();
+    emit loginclose();
 }
 
-void Login::loginSlot()
+void Login::on_Sign_clicked()
 {
-    this->show();
+    this->hide();
+    registerDialog->show();
 }
 
-
-
+void Login::on_main_clicked()
+{
+    emit loginclose();
+}
