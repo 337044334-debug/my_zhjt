@@ -8,6 +8,7 @@
 #include "control.h"
 #include "pe15thread.h"
 #include "login.h"
+#include "calculate.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Widget; }
@@ -31,6 +32,7 @@ private:
 
     Pe15thread *pe15thread;
     Login *login;
+    Calculate *calculate;
 
 private slots:
     void login_show();

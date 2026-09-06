@@ -47,12 +47,23 @@ Widget::Widget(QWidget *parent)
     /*  智能控制  */
     smart = new SmartController(data_thread, settings, this);
 
+    /*  百度云模块  */
+    QVBoxLayout *tab_calculate = new QVBoxLayout(ui->tab_ioT);
+    tab_calculate->setContentsMargins(0, 0, 0, 0);
+
+    calculate = new Calculate(data_thread,ui->tab_ioT);
+    tab_calculate->addWidget(calculate);
+
     /*  控制  */
     QVBoxLayout *tab_control = new QVBoxLayout(ui->tab_control);
     tab_control->setContentsMargins(0, 0, 0, 0);
 
-    control = new Control(smart,ui->tab_humiture);
+    control = new Control(calculate,smart,ui->tab_humiture);
     tab_control->addWidget(control);
+
+    
+
+
 
     /*  login界面  */
     pe15thread=new Pe15thread();

@@ -25,7 +25,8 @@ SOURCES += \
     my_humiture.cpp \
     control.cpp \
     pe15thread.cpp \
-    register.cpp
+    register.cpp \
+    calculate.cpp \
 
 HEADERS += \
     login.h \
@@ -41,7 +42,8 @@ HEADERS += \
     my_humiture.h \
     control.h \
     pe15thread.h \
-    register.h
+    register.h \
+    calculate.h
 
 
 FORMS += \
@@ -54,7 +56,8 @@ FORMS += \
     weather.ui \
     my_humiture.ui \
     control.ui \
-    register.ui
+    register.ui \
+    calculate.ui
 
 
 # Default rules for deployment.

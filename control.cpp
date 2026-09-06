@@ -5,10 +5,11 @@
 #include <unistd.h>
 #include <QDebug>
 
-Control::Control(SmartController *smart,QWidget *parent)
+Control::Control(Calculate* calculate,SmartController *smart,QWidget *parent)
     : QWidget(parent)
     , ui(new Ui::Control)
     , smart(smart)
+    , calculate(calculate)
 {
     ui->setupUi(this);
     connect(smart,&SmartController::led1_on,this,&Control::led1_on_slots);
@@ -26,6 +27,23 @@ Control::Control(SmartController *smart,QWidget *parent)
 
 
     connect(smart,&SmartController::init_signals,this,&Control::init);
+
+    connect(calculate,&Calculate::led1_on,this,&Control::led1_on_slots);
+    connect(calculate,&Calculate::led2_on,this,&Control::led2_on_slots);
+    connect(calculate,&Calculate::led3_on,this,&Control::led3_on_slots);
+
+    connect(calculate,&Calculate::led1_off,this,&Control::led1_off_slots);
+    connect(calculate,&Calculate::led2_off,this,&Control::led2_off_slots);
+    connect(calculate,&Calculate::led3_off,this,&Control::led3_off_slots);
+
+    connect(calculate,&Calculate::fan_on,this,&Control::fan_on_slots);
+    connect(calculate,&Calculate::fan_off,this,&Control::fan_off_slots);
+
+    connect(calculate,&Calculate::beep_on,this,&Control::on_pushButton_beep_on_clicked);
+    connect(calculate,&Calculate::beep_off,this,&Control::on_pushButton_beep_off_clicked);
+
+
+
 
 
     init();

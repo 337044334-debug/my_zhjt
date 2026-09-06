@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Calculate</class>
+ <widget class="QWidget" name="Calculate">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>982</width>
+    <height>519</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Calculate</string>
+  </property>
+  <widget class="QLabel" name="picture">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>982</width>
+     <height>519</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="pixmap">
+    <pixmap resource="icon.qrc">:/icon/yun2.bmp</pixmap>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="wordWrap">
+    <bool>true</bool>
+   </property>
+  </widget>
+  <widget class="My_lineEdit" name="lineEdit_coreid">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>47</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="My_lineEdit" name="lineEdit_devkey">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>107</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="My_lineEdit" name="lineEdit_devsecret">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>169</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="My_lineEdit" name="lineEdit_time">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>287</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QComboBox" name="comboBox_paswordway">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>227</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>MD5</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QComboBox" name="comboBox_city">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>348</y>
+     <width>211</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <item>
+    <property name="text">
+     <string>广州</string>
+    </property>
+   </item>
+   <item>
+    <property name="text">
+     <string>北京</string>
+    </property>
+   </item>
+  </widget>
+  <widget class="QPushButton" name="pushButton_gettime">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>290</y>
+     <width>71</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image: url(:/icon/1.png);
+border-style:outset;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_connectmqtt">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>430</y>
+     <width>165</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image:url(:/icon/4.png);
+border-style:outset;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_calculate">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>430</y>
+     <width>165</width>
+     <height>45</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-image:url(:/icon/2.png);
+border-style:outset;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>My_lineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>my_lineedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="icon.qrc"/>
+ </resources>
+ <connections/>
+</ui>

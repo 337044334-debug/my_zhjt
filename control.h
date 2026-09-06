@@ -3,6 +3,7 @@
 
 #include <QWidget>
 #include "smartcontroller.h"
+#include "calculate.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Control; }
@@ -13,7 +14,7 @@ class Control : public QWidget
     Q_OBJECT
 
 public:
-    Control(SmartController *smart,QWidget *parent = nullptr);  
+    Control(Calculate* calculate,SmartController *smart,QWidget *parent = nullptr);  
     
     ~Control();
 
@@ -59,7 +60,8 @@ private:
     Ui::Control *ui;
     void beepring();
     void beepunring(); 
-    SmartController* smart; 
+    SmartController* smart;
+    Calculate* calculate;
       
 };
 #endif // CONTROL_H
